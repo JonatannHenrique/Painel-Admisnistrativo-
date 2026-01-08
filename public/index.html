@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo - Pizzaria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="logo">🍕 Pizzaria Admin</h1>
+        <nav class="tabs">
+          <button class="tab-btn active" data-view="usuarios">Usuários</button>
+          <button class="tab-btn" data-view="pizzas">Pizzas</button>
+          <button class="tab-btn" data-view="pedidos">Pedidos</button>
+          <button class="tab-btn" data-view="login">Login</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Usuarios View -->
+      <div id="usuarios" class="view active">
+        <div class="view-header">
+          <h2>Usuários</h2>
+          <button id="btnNewUser" class="btn btn-primary">+ Novo Usuário</button>
+        </div>
+        <div class="search-box">
+          <input id="searchUser" type="text" placeholder="Buscar por nome...">
+          <button id="btnSearch" class="btn btn-secondary">Buscar</button>
+          <button id="btnClearSearch" class="btn btn-ghost">Limpar</button>
+        </div>
+        <div id="usuariosTable" class="table-container"></div>
+      </div>
+
+      <!-- Pizzas View -->
+      <div id="pizzas" class="view">
+        <div class="view-header">
+          <h2>Pizzas</h2>
+          <button id="btnNewPizza" class="btn btn-primary">+ Nova Pizza</button>
+        </div>
+        <div id="pizzasTable" class="table-container"></div>
+      </div>
+
+      <!-- Pedidos View -->
+      <div id="pedidos" class="view">
+        <div class="view-header">
+          <h2>Pedidos</h2>
+          <button id="btnNewPedido" class="btn btn-primary">+ Novo Pedido</button>
+        </div>
+        <div id="pedidosTable" class="table-container"></div>
+      </div>
+
+      <!-- Login View -->
+      <div id="login" class="view">
+        <div class="form-container">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" name="senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+          <div id="loginResult"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
